@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Гостиницы</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="action-sheets-basic-page">
+    <ion-list class="wrap_hotel_list">
+        <button ion-button class="filter_button" (click)="openModalFilter()">Фильтр</button>
+
+        <div class="epty_list" *ngIf="this.visibleHotels.length == 0">Не нашли подходящих гостиниц :(</div>
+        <button (click)="openDetailPage(hotel)" ion-item *ngFor="let hotel of this.visibleHotels">
+            <ion-avatar item-start>
+                <img src="{{hotel.imageUrl}}">
+            </ion-avatar>
+            <h2>{{hotel.title}}</h2>
+            <p>{{hotel.address}}</p>
+        </button>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Фильтр
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+                <span ion-text color="primary" showWhen="ios">Cancel</span>
+                <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label color="primary">Цена от</ion-label>
+            <ion-input [(ngModel)]="filters.priceMin" placeholder="цена от"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary">Цена до</ion-label>
+            <ion-input [(ngModel)]="filters.priceMax" placeholder="цена до"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+            <ion-label>Наличие парковки обязательно</ion-label>
+            <ion-checkbox [(ngModel)]="filters.parking"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+
+    <ion-footer >
+        <ion-toolbar >
+            <button class="apply_filter_button" ion-button (click)="applyFilter()">Применить</button>
+        </ion-toolbar>
+    </ion-footer>
+
+</ion-content>
